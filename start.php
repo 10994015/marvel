@@ -23,7 +23,8 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
 
     
     <div class="randomBtn" id="randomBtn1">
-        <a href="javascript:;"" class="clickBtn"><i class="fas fa-hand-point-up"></i></a>
+        <!-- <img src="./images2/click.png" class="clickBtn" id="clickBtn"> -->
+        <a href="javascript:;"" class="clickBtn" id="clickBtn"><i class="fas fa-hand-point-up"></i></a>
     </div>
     
     
@@ -35,14 +36,13 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
            <h1 id="touchH1">輕觸螢幕開始遊戲</h1>
         </div>
             <div class="progressBar" id="progressBar">
-            
-                <div class="progressBarItem"></div>
+                <!-- <div class="progressBarItem"></div> -->
             </div>
-            <div id="progressBarNum">0%</div>
+            <div id="progressBarNum">100%</div>
             <img src="" alt="" id="squid">
-            <img src="./tt.png" id="arms">
+            <img src="./images2/arms1.png" id="arms">
             <img src="" alt="" id="player">
-            <p id="addscore">+2%</p>
+            <p id="addscore">-2%</p>
     </div>
 
     <div class="qaAll">

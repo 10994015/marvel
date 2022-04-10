@@ -35,7 +35,7 @@ try {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background: url("./images/bg1.jpg") no-repeat;
+        background: url("./images2/bg.jpg") no-repeat;
         background-size: cover;
         box-sizing: border-box;
         padding: 10px;

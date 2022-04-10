@@ -1,6 +1,5 @@
 <?php
 $randNum = rand(1,4);
-echo $randNum;
 ?>
 
 <!DOCTYPE html>

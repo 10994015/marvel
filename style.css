@@ -5,7 +5,7 @@
 .main{
     width: 100%;
     height: 100vh;
-    background: url("images/bg1.jpg") no-repeat; 
+    background: url("images2/bg.jpg") no-repeat; 
     background-size: cover;
     position: relative;
     background-position:0px 0px;
@@ -18,7 +18,7 @@
     top: 30px;
     font-size: 24px;
     font-weight: 600;
-    color:#f00;
+    color:#1484c4;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     opacity: 0;
     transition: .3;
@@ -61,12 +61,14 @@
     position: absolute;
     overflow: hidden;
     margin: auto;
+    background-color: #BF3434;
+    flex-direction: row-reverse;
 }
 #progressBarNum{
     position: absolute;
     top: 3px;
     left: 49%;
-    color:#000;
+    color:#fff;
     display: block;
     z-index: 999;
     font-weight: 600;
@@ -74,9 +76,12 @@
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .progressBarItem{
-    width: 4%;
+    width: calc(4% - 2px);
     height: 30px;
-    background: #BF3434;
+    background: #ccc;
+    margin:0;
+    padding: 0;
+    border:1px #ccc solid;
 }
 
 .qaAll{
@@ -186,11 +191,12 @@
     opacity: 0;
 }
 #player{
-    width: 100px;
+    width: 120px;
     height: auto;
     position: absolute;
     bottom: 8%;
-    left: 38%;
+    left:50%;
+    transform: translateX(-50%);
 }
 #pass{
     position: fixed;
@@ -225,11 +231,12 @@
 }
 
 #squid{
-    width: 200px;
+    width: 120px;
     height: auto;
     position: absolute;
     top: 50px;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .randomBtn{
     position: relative;
@@ -242,18 +249,18 @@
     z-index: 9999999999;
     display: none;
 }
-.randomBtn a{
+.randomBtn .clickBtn{
     width: 80px;
     height: 80px;
     display: block;
     text-align: center;
     line-height: 80px;
-    background-color: #BF3434;
-    border-radius: 50%;
     text-decoration: none;
     color:#000;
     font-size: 35px;
-    box-shadow: 0 0 20px 5px #1484c4;
+    box-shadow: 0 0 20px 5px #fff;
+    border-radius: 50%;
+    background-color:#1484c4;
 }
 .randomBtn a i{
     color:#fff;
@@ -386,26 +393,25 @@
 }
 
 #arms{
-    width:50px;
+    width:80px;
     position: absolute;
     bottom:15%;
     left:50%;
     transform: translateX(-50%);
     z-index: 99999999999;
     animation: arms .5s linear;
-    opacity: 0;
     display: none;
 }
 @keyframes arms{
     0%{
-        transform: translateY(0);
+        transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
     60%{
         opacity: 1;
     }
     100%{
-        transform: translateY(-400px);
+        transform: translateY(-500px) rotate(1000deg);
     }
 }
 @media screen and (min-width:1024px){

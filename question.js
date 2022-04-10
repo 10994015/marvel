@@ -511,12 +511,12 @@ function closeBox(){
         bingo[c].style.opacity="0";
         qaAll[c].style.display="none";
     }
-    setTimeout(()=>{
-        squid.src="./images/squid2.png";
-    },400)
-    setTimeout(()=>{
-        squid.src="./images/squid1.png";
-    },800)
+    // setTimeout(()=>{
+    //     squid.src="./images/squid2.png";
+    // },400)
+    // setTimeout(()=>{
+    //     squid.src="./images/squid1.png";
+    // },800)
 }
 
 
