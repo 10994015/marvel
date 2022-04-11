@@ -36,8 +36,12 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
         <div id="hiddenLayer">
            <h1 id="touchH1">輕觸螢幕開始遊戲</h1>
         </div>
+        <img src="./images2/head.png" class="head">
+        <p class="hp">HP</p>
             <div class="progressBar" id="progressBar">
+            
                 <!-- <div class="progressBarItem"></div> -->
+               
             </div>
             <div id="progressBarNum">100%</div>
             <img src="" alt="" id="squid">
