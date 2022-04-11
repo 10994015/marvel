@@ -89,7 +89,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         
                 $stmt->execute();
         
-                header('Location:./cccccccc.php');
+                header('Location:./finish.php');
             }
             
         }else{

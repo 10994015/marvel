@@ -29,8 +29,8 @@ times = 0;
 src=1;
 pos = 0;
 squid.src="./images2/boss.png";
-player.src="./images2/playerA1.png";
-
+player.src="./images2/playerC1.png";
+arms.src = "./images2/arms3.png";
 touchH1.addEventListener("click",run);
 
 touchH1.addEventListener("click",()=>{
@@ -51,8 +51,8 @@ for(var a=0;a<clickBtn.length;a++){
 
 function disappear(){
     arms.style.display = "block";
-    player.src="./images2/playerA2.png";
-    player.style.width = "90px";
+    player.src="./images2/playerC2.png";
+    player.style.width = "120px";
     setTimeout(()=>{
         squid.src="./images2/boss2.png";
         addscore.style.opacity="1";
@@ -62,7 +62,7 @@ function disappear(){
     
     setTimeout(()=>{
         arms.style.display = "none"
-        player.src="./images2/playerA1.png";
+        player.src="./images2/playerC1.png";
         player.style.width = "120px";
     },500)
     setTimeout(()=>{

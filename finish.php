@@ -16,42 +16,42 @@ $count = strlen($connter);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>衛保組健促計畫</title>
     <style>
-    *{
-            margin: 0;
-            padding: 0;
-            
-    }
-        .pass{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width:100%;
-        height: 100vh;
-        background: #FFC9C9;
-        color:#1F3864;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 99999999999999999999999;
-        transition: 1s;
+        *{
+                margin: 0;
+                padding: 0;
+                
         }
-        .pass>h1{
-        font-size:2.4rem;
-        color:#BF3434;
-        }
-        .pass >img{
-        width: 200px;
-        height: 200px;
-        }
-        .pass>p{
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-align: center;
-        line-height: 1.3;
-        }
+                .pass{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width:100%;
+                height: 100vh;
+                background: #FFC9C9;
+                color:#1F3864;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                z-index: 99999999999999999999999;
+                transition: 1s;
+                }
+                .pass>h1{
+                font-size:2.4rem;
+                color:#BF3434;
+                }
+                .pass >img{
+                width: 200px;
+                height: 200px;
+                }
+                .pass>p{
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-align: center;
+                line-height: 1.3;
+                }
 
     </style>
 </head>

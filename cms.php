@@ -1,15 +1,18 @@
 <?php
 require_once('connection.php');
 require_once('assist.php');
-
 // if(isset($_SESSION['name'])){
 $sql_str = "SELECT * FROM game WHERE type1=1 AND type2=2 AND type3=3 AND type4=4";
 
 $user = $pdo -> query($sql_str);
 
 $total = $user -> rowCount();
-?>
 
+
+?>
+<?php 
+
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -18,10 +21,10 @@ $total = $user -> rowCount();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    *{
-        margin:0;
-        padding: 0;
-    }
+        *{
+            margin:0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>

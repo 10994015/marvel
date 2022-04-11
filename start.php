@@ -1,8 +1,9 @@
 <?php
 include("connection.php");
 if(isset($_POST['type']) && $_POST['type'] !=""){
-
+    
     $type = $_POST['type'];
+    $scripturl = "script".$type.".js";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-    <title>魷魚遊戲GO</title>
+    <title>衛保組健促計畫</title>
     
     
 </head>
@@ -40,7 +41,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
             </div>
             <div id="progressBarNum">100%</div>
             <img src="" alt="" id="squid">
-            <img src="./images2/arms1.png" id="arms">
+            <img src="" id="arms">
             <img src="" alt="" id="player">
             <p id="addscore">-2%</p>
     </div>
@@ -193,43 +194,44 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
 
 
     <style>
-    .loading{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, .2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999999999999999999999;
-        display: none;
-    }
-    .loader{
-        height: 50px;
-        width:50px;
-        border:10px solid #63666b;
-        border-top-color:#2a88e6;
-        position:absolute;
-        margin:auto;
-        top: 0;
-        bottom:0;
-        left:0;
-        right:0;
-        border-radius: 50%;
-        animation:spin 1.5s infinite linear;
-    }
-    @keyframes spin{
-        0%{
-            transform: rotate(0deg);
+        .loading{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, .2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999999999999999999;
+            display: none;
         }
-        100%{
-            transform: rotate(360deg);
+        .loader{
+            height: 50px;
+            width:50px;
+            border:10px solid #63666b;
+            border-top-color:#2a88e6;
+            position:absolute;
+            margin:auto;
+            top: 0;
+            bottom:0;
+            left:0;
+            right:0;
+            border-radius: 50%;
+            animation:spin 1.5s infinite linear;
         }
-    }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
     </style>
-    <script src="script.js"></script>
+    
+    <script src="<?php echo $scripturl; ?>"></script>
     <script src="question.js"></script>
     <script src="randomBtn.js"></script>
 </body>
