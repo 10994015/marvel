@@ -80,7 +80,7 @@ function disappear(){
     html += '<div class="progressBarItem"></div>';
     progressBar.innerHTML = html;
     // progressBarNum.textContent = Number(progressBarNum.textContent)+1;
-    progressBarNum.innerHTML = (100- times*4) +"%";
+    progressBarNum.innerHTML = (100- times*2) +"%";
 
     for(var d=0;d<randomBtnClass.length;d++){
         randomBtnClass[d].style.display="none";
@@ -122,7 +122,7 @@ function swap(){
 }
 function start(){
     
-    if(times==3){
+    if(times==5){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -130,7 +130,7 @@ function start(){
         clearInterval(cycle);
         qaAll[0].style.display = "flex";
     }
-    if(times==8){
+    if(times==11){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -138,7 +138,7 @@ function start(){
         qaAll[1].style.display = "flex";
         
     }
-    if(times==12){
+    if(times==17){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -146,7 +146,7 @@ function start(){
         qaAll[2].style.display = "flex";
        
     }
-    if(times==17){
+    if(times==24){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -154,7 +154,7 @@ function start(){
         qaAll[3].style.display = "flex";
       
     }
-    if(times==22){
+    if(times==30){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -162,13 +162,36 @@ function start(){
         qaAll[4].style.display = "flex";
         
     }
-    if(times==25){
+    if(times==35){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
         clearInterval(cycle);
         qaAll[5].style.display = "flex";
-        // squid.src="./images/squid2.png";
+        
+    }
+    if(times==40){
+        times+=1;
+        html += '<div class="progressBarItem"></div>';
+        progressBar.innerHTML = html;
+        clearInterval(cycle);
+        qaAll[6].style.display = "flex";
+        
+    }
+    if(times==45){
+        times+=1;
+        html += '<div class="progressBarItem"></div>';
+        progressBar.innerHTML = html;
+        clearInterval(cycle);
+        qaAll[7].style.display = "flex";
+        
+    }
+    if(times==50){
+        times+=1;
+        html += '<div class="progressBarItem"></div>';
+        progressBar.innerHTML = html;
+        clearInterval(cycle);
+        qaAll[8].style.display = "flex";
         
     }
     // if(times==30){
