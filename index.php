@@ -15,7 +15,7 @@ $randNum = rand(1,4);
             padding: 0;
         }
         form{
-            background: #FECAC9;
+            background:#050C26;
             position: relative;
 
         }
@@ -66,7 +66,7 @@ $randNum = rand(1,4);
 </head>
 <body>
     <form method="post" action="start.php"> 
-        <img src="images/index.png" alt="">
+        <img src="images2/bg.png" alt="">
         <!-- <a href="./start.php">開始遊戲</a> -->
         <input type="hidden" name="type" value="<?php echo $randNum; ?>">
         <input type="submit" class="start" value="開始遊戲">

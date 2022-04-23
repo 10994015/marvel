@@ -11,7 +11,7 @@ $total = $user -> rowCount();
 
 ?>
 <?php 
-
+if(isset($_SESSION['username'])){
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -28,6 +28,8 @@ $total = $user -> rowCount();
     </style>
 </head>
 <body>
+<a href="./logout.php">登出</a>
+<h4>已完成四關的使用者:</h4>
     <?php foreach($user as $item){?>
         <div class="userlist">
             <p class="user"><?php echo $item['name']; ?>-<?php echo $item['student']; ?> </p>
@@ -40,3 +42,6 @@ $total = $user -> rowCount();
 </body>
 </html>
 
+    <?php }else{
+        header('Location:./login.php');  
+    }?>
