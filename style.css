@@ -272,10 +272,19 @@
     font-size: 35px;
     box-shadow: 0 0 20px 5px #fff;
     border-radius: 50%;
-    background-color:#1484c4;
+    background-color:rgba(20, 130, 194, .5);
+    position: relative;
 }
 .randomBtn a i{
     color:#fff;
+}
+.randomBtn a img{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:50px;
+
 }
 #randomBtn1>a{
     position: absolute;

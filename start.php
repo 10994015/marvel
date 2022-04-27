@@ -26,7 +26,9 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
     
     <div class="randomBtn" id="randomBtn1">
         <!-- <img src="./images2/click.png" class="clickBtn" id="clickBtn"> -->
-        <a href="javascript:;"" class="clickBtn" id="clickBtn"><i class="fas fa-hand-point-up"></i></a>
+        <!-- <a href="javascript:;" class="clickBtn" id="clickBtn"><i class="fas fa-hand-point-up"></i></a> -->
+        <a href="javascript:;" class="clickBtn" id="clickBtn"> <img src="./images2/click.png"></a>
+        <!-- <img src="./images2/click.png" class="clickBtn" id="clickBtn"> -->
     </div>
     
     

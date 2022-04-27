@@ -25,23 +25,37 @@ $randNum = rand(1,4);
             height: 100vh;
             object-fit: contain;
         }
-        form > .start{
+        form > .startBtn {
             position: absolute;
             display: block;
             bottom: 10%;
             left:calc(50% - 150px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: shadow 2s infinite;
+        }
+        form > .startBtn>img{
+            width:140px;
+            height: 140px;
+        }
+        form  .start{
+            position: absolute;
+            display: block;
+            top: 0;
+            left:0;
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            background-color: #BF3334;
+            background-color: transparent;
             text-align: center;
-            line-height: 140px;
+            line-height: 120px;
             color:#fff;
             font-weight: 600;
             text-decoration: none;
             font-size: 1.8rem;
-            animation: shadow 2s infinite;
-            box-shadow: 0 0 10px  #fff;
+            /* animation: shadow 2s infinite; */
+            /* box-shadow: 0 0 10px  #fff; */
             outline: none;
             border:none;
             cursor: pointer;
@@ -69,7 +83,10 @@ $randNum = rand(1,4);
         <img src="images2/bg.png" alt="">
         <!-- <a href="./start.php">開始遊戲</a> -->
         <input type="hidden" name="type" value="<?php echo $randNum; ?>">
-        <input type="submit" class="start" value="開始遊戲">
+        <div class="startBtn">
+            <input type="submit" class="start" value="">
+            <img src="./images2/start.png" alt="">
+        </div>
     </form>
 </body>
 </html>
