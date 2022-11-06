@@ -1,5 +1,5 @@
 <?php
-require_once('./connection.php');
+require_once('../config/connection.php');
 session_start();
 try {
     $sql_str = "SELECT * FROM users
@@ -22,7 +22,7 @@ try {
    
       $_SESSION['username']  = $row_RS['username'];   //將會員名稱記錄到SESSION系統變數
 
-      $url = './cms.php';  //登入成功要前往的位址
+      $url = './';  //登入成功要前往的位址
    
     }else{
       //登入失敗..............登入失敗要前往的位址，並加上msg參數

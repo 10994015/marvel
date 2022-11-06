@@ -5,5 +5,4 @@ try{
 }catch(PDOException $e){
 	exit('資料庫錯誤.');
 }
-
  ?>

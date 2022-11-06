@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("./config/connection.php");
 if(isset($_POST['type']) && $_POST['type'] !=""){
     
     $type = $_POST['type'];
@@ -25,10 +25,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
 
     
     <div class="randomBtn" id="randomBtn1">
-        <!-- <img src="./images2/click.png" class="clickBtn" id="clickBtn"> -->
-        <!-- <a href="javascript:;" class="clickBtn" id="clickBtn"><i class="fas fa-hand-point-up"></i></a> -->
         <a href="javascript:;" class="clickBtn" id="clickBtn"> <img src="./images2/click.png"></a>
-        <!-- <img src="./images2/click.png" class="clickBtn" id="clickBtn"> -->
     </div>
     
     
@@ -168,21 +165,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <button class="send">送出</button>
             </div>
     </div>
-    <!-- <div class="qaAll">
-        <h1 class="error">答錯了!再答一次!<br><i class="fas fa-times-circle"></i></h1>
-        <div class="qa">
-                <p>(7).<span id="question7">您對本次活動的滿意度為?</span></p>
-                <form class="Satisfaction" method="post" action="">
-                    <label for="scroe1"><input type="radio" id="scroe1" name="score" value="1">非常不滿意</label>
-                    <label for="scroe2"><input type="radio" id="scroe2" name="score" value="2">不滿意</label>
-                    <label for="scroe3"><input type="radio" id="scroe3" name="score" value="3">普通</label>
-                    <label for="scroe4"><input type="radio" id="scroe4" name="score" value="4">滿意</label>
-                    <label for="scroe5"><input type="radio" id="scroe5" name="score" value="5" checked>非常滿意</label>
-               
-                <button class="send">送出</button>
-             </form>
-            </div>
-    </div> -->
+   
 
     
     <div class="bingo">
@@ -218,18 +201,13 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
         <h1>答對了!點擊繼續</h1>
     </div>
    
-    <form class="bingo" action="input.php" method="post"> 
+    <form class="bingo" action="./input.php" method="post"> 
         <strong id="hint9"></strong>
         <h1>闖關成功!點擊繼續</h1>
         <input type="hidden" name="hidden" value="correct">
         <input type="hidden" name="type" value="<?php echo $type; ?>">
         <input type="submit">
     </form>
-        
-    
-    <!-- <div class="bingo">
-        <h1>闖關成功!點擊繼續</h1>
-    </div> -->
 
     <div class="loading">
         <div class="loader"></div>
@@ -238,7 +216,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
     <div id="pass">
         <h1>闖關成功</h1>
         <h1 id="second">0</h1>
-        <img src="images/LOGO.png" alt="">
+        <!-- <img src="images/LOGO.png"> -->
         <p>本活動為衛生保健組宣導各式健康促進議題</p>
         <p>結合時事以平易近人、生活化方式作為傳遞</p>
         <p>感謝您的參加</p>
@@ -288,9 +266,9 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
         }
     </style>
     
-    <script src="<?php echo $scripturl; ?>"></script>
-    <script src="<?php echo $questionurl; ?>"></script>
-    <script src="randomBtn.js"></script>
+    <script src="./js/<?php echo $scripturl; ?>"></script>
+    <script src="./js/<?php echo $questionurl; ?>"></script>
+    <script src="./js/randomBtn.js"></script>
 </body>
 </body>
 </html>

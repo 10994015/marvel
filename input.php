@@ -1,5 +1,5 @@
 <?php
-include("connection.php");
+include("./config/connection.php");
 
 if( isset($_POST['hidden']) && $_POST['hidden']=='correct' ){
 
@@ -24,73 +24,73 @@ try {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>衛保組健促計畫</title>
     <style>
-    *{
-        margin:0;
-        padding:0;
-    }
-    .form{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: url("./images2/bg.jpg") no-repeat;
-        background-size: cover;
-        box-sizing: border-box;
-        padding: 10px;
+        *{
+            margin:0;
+            padding:0;
+        }
+        .form{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url("./images2/bg.jpg") no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            padding: 10px;
 
-    }
-    form{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    form>input{
-        margin: 15px 0;
-        width: 100%;
-        height: 50px;
-        border:none;
-        outline: none;
-        border:1px #ccc solid;
-        border-radius: 10px;
-        padding: 0 5px;
-        box-sizing: border-box;
-        font-size: 16px;
-    }
-    form>input[type="submit"]{
-        width: 100%;
-        background-color: #ccc;
-        color:#fff;
-        font-weight: 600;
-        font-size: 18px;
-    }
-    .view{
-        display: flex;
-        flex-direction: column;
-    }
-    .Satisfaction{
-        background-color: #fff;
-        padding: 5px;
-        border-radius: 10px;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif,"微軟正黑體";
-        margin-bottom: 20px;
-    }
-    .Satisfaction>select{
-        width: 90%;
-        margin: auto;
-        height: 40px;
-        border:none;
-        outline: none;
-        border:1px #333 solid;
-        border-radius: 5px;
-    }
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        form>input{
+            margin: 15px 0;
+            width: 100%;
+            height: 50px;
+            border:none;
+            outline: none;
+            border:1px #ccc solid;
+            border-radius: 10px;
+            padding: 0 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        form>input[type="submit"]{
+            width: 100%;
+            background-color: #ccc;
+            color:#fff;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .view{
+            display: flex;
+            flex-direction: column;
+        }
+        .Satisfaction{
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif,"微軟正黑體";
+            margin-bottom: 20px;
+        }
+        .Satisfaction>select{
+            width: 90%;
+            margin: auto;
+            height: 40px;
+            border:none;
+            outline: none;
+            border:1px #333 solid;
+            border-radius: 5px;
+        }
     
     </style>
 </head>

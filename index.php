@@ -9,78 +9,11 @@ $randNum = rand(1,4);
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>衛保組健促計畫</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        form{
-            background:#050C26;
-            position: relative;
-
-        }
-        form>img{
-            
-            width: 100%;
-            height: 100vh;
-            object-fit: contain;
-        }
-        form > .startBtn {
-            position: absolute;
-            display: block;
-            bottom: 10%;
-            left:calc(50% - 150px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: shadow 2s infinite;
-        }
-        form > .startBtn>img{
-            width:140px;
-            height: 140px;
-        }
-        form  .start{
-            position: absolute;
-            display: block;
-            top: 0;
-            left:0;
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background-color: transparent;
-            text-align: center;
-            line-height: 120px;
-            color:#fff;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1.8rem;
-            /* animation: shadow 2s infinite; */
-            /* box-shadow: 0 0 10px  #fff; */
-            outline: none;
-            border:none;
-            cursor: pointer;
-        }
-        @keyframes shadow{
-            0%{
-                transform: scale(1);
-               
-            }
-            50%{
-                transform: scale(1.2);
-            }
-            100%{
-                transform: scale(1);
-            }
-        }
-        form > a:hover{
-            background-color: #862424;
-            transition: .5s;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <form method="post" action="start.php"> 
-        <img src="images2/bg.png" alt="">
+        <img src="images2/home.jpg" alt="">
         <!-- <a href="./start.php">開始遊戲</a> -->
         <input type="hidden" name="type" value="<?php echo $randNum; ?>">
         <div class="startBtn">

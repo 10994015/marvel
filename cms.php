@@ -1,6 +1,6 @@
 <?php
-require_once('connection.php');
-require_once('assist.php');
+require_once('../config/connection.php');
+require_once('../config/assist.php');
 // if(isset($_SESSION['name'])){
 $sql_str = "SELECT * FROM game WHERE type1=1 AND type2=2 AND type3=3 AND type4=4";
 

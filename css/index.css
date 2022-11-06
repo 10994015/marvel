@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    background:#050C26;
+    position: relative;
+
+}
+form>img{
+    
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+}
+form > .startBtn {
+    position: absolute;
+    display: block;
+    top: 39%;
+    right:10px;
+    display: flex;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    animation: shadow 2s infinite;
+}
+form > .startBtn>img{
+    width:110px;
+    height: 110px;
+}
+form  .start{
+    position: absolute;
+    display: block;
+    top: 0;
+    left:0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: transparent;
+    text-align: center;
+    line-height: 120px;
+    color:#fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.6rem;
+    /* animation: shadow 2s infinite; */
+    /* box-shadow: 0 0 10px  #fff; */
+    outline: none;
+    border:none;
+    cursor: pointer;
+}
+@keyframes shadow{
+    0%{
+        transform: scale(1);
+       
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+form > a:hover{
+    background-color: #862424;
+    transition: .5s;
+}

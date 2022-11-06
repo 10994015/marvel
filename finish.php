@@ -1,5 +1,5 @@
 <?php
-require_once('connection.php');
+require_once('./config/connection.php');
 $sql = "UPDATE no SET count=count+1";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -65,7 +65,7 @@ $count = strlen($connter);
                         }
                 ?>
                 </h1>
-                <img src="images/LOGO.png" alt="">
+                <img src="images2/LOGO.png" alt="">
                 <p>本活動為衛生保健組宣導各式健康促進議題</p>
                 <p>結合時事以平易近人、生活化方式作為傳遞</p>
                 <br>

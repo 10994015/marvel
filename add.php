@@ -1,6 +1,6 @@
 <?php
-require_once('connection.php');
-require_once('assist.php');
+require_once('./config/connection.php');
+require_once('./config/assist.php');
 
 
 if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
@@ -8,7 +8,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         $type = $_POST['type'];
         $name = $_POST['name'];
         $student = $_POST['student'];
-        $time = time();
+        $time = date('Y-m-d H:i:s');
         $score = $_POST['score'];
 
 
@@ -20,10 +20,8 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         $stmt->bindParam(':student',$student);
         $stmt->execute();
        
-        $total = $stmt->rowCount();  //計算出查詢結果的總筆數
+        $total = $stmt->rowCount();  
        
-        // 回傳總筆數, 如果有查詢到符合的資料, 則會得到1
-        // echo $total;
 
         if($total<1){
             if($type==1){
@@ -91,7 +89,6 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         
                 header('Location:./finish.php');
             }
-            
         }else{
            if($type==1){
                 $sql_str = "UPDATE game SET type1 = :type WHERE student  = :student";
