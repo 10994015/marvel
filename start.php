@@ -109,7 +109,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <label for="q5-a"><input type="radio" name="q5" id="q5-a" class="option5"><span id="q5a"></span></label>
                 <label for="q5-b"><input type="radio" name="q5" id="q5-b" class="option5"><span id="q5b"></span></label>
                 <label for="q5-c"><input type="radio" name="q5" id="q5-c" class="option5"><span id="q5c"></span></label>
-                <label for="q5-d"><input type="radio" name="q5" id="q5-d" class="option5"><span id="q5d"></span></label>
                 <!-- <strong id="hint5"></strong> -->
                 <button class="send">送出</button>
             </div>
@@ -121,7 +120,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <label for="q6-a"><input type="radio" name="q6" id="q6-a" class="option6"><span id="q6a"></span></label>
                 <label for="q6-b"><input type="radio" name="q6" id="q6-b" class="option6"><span id="q6b"></span></label>
                 <label for="q6-c"><input type="radio" name="q6" id="q6-c" class="option6"><span id="q6c"></span></label>
-                <label for="q6-d"><input type="radio" name="q6" id="q6-d" class="option6"><span id="q6d"></span></label>
                 <!-- <strong id="hint6"></strong> -->
                 <button class="send">送出</button>
             </div>
@@ -134,7 +132,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <label for="q7-a"><input type="radio" name="q7" id="q7-a" class="option7"><span id="q7a"></span></label>
                 <label for="q7-b"><input type="radio" name="q7" id="q7-b" class="option7"><span id="q7b"></span></label>
                 <label for="q7-c"><input type="radio" name="q7" id="q7-c" class="option7"><span id="q7c"></span></label>
-                <label for="q7-d"><input type="radio" name="q7" id="q7-d" class="option7"><span id="q7d"></span></label>
                 <!-- <strong id="hint6"></strong> -->
                 <button class="send">送出</button>
             </div>
@@ -147,7 +144,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <label for="q8-a"><input type="radio" name="q8" id="q8-a" class="option8"><span id="q8a"></span></label>
                 <label for="q8-b"><input type="radio" name="q8" id="q8-b" class="option8"><span id="q8b"></span></label>
                 <label for="q8-c"><input type="radio" name="q8" id="q8-c" class="option8"><span id="q8c"></span></label>
-                <label for="q8-d"><input type="radio" name="q8" id="q8-d" class="option8"><span id="q8d"></span></label>
                 <!-- <strong id="hint6"></strong> -->
                 <button class="send">送出</button>
             </div>
@@ -160,7 +156,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <label for="q9-a"><input type="radio" name="q9" id="q9-a" class="option9"><span id="q9a"></span></label>
                 <label for="q9-b"><input type="radio" name="q9" id="q9-b" class="option9"><span id="q9b"></span></label>
                 <label for="q9-c"><input type="radio" name="q9" id="q9-c" class="option9"><span id="q9c"></span></label>
-                <label for="q9-d"><input type="radio" name="q9" id="q9-d" class="option9"><span id="q9d"></span></label>
                 <!-- <strong id="hint6"></strong> -->
                 <button class="send">送出</button>
             </div>

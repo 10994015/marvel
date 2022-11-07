@@ -6,8 +6,8 @@ $stmt->execute();
 $sql = "SELECT count from no";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$arr=$stmt->fetchAll(PDO::FETCH_ASSOC);
-$connter = $arr[0]["count"];
+$arr=$stmt->fetch(PDO::FETCH_ASSOC);
+$connter = $arr["count"];
 $count = strlen($connter);
 ?>
 <!DOCTYPE html>
@@ -17,63 +17,33 @@ $count = strlen($connter);
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>衛保組健促計畫</title>
-    <style>
-        *{
-                margin: 0;
-                padding: 0;
-                
-        }
-                .pass{
-                position: fixed;
-                top: 0;
-                left: 0;
-                width:100%;
-                height: 100vh;
-                background: #FFC9C9;
-                color:#1F3864;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                z-index: 99999999999999999999999;
-                transition: 1s;
-                }
-                .pass>h1{
-                font-size:2.4rem;
-                color:#BF3434;
-                }
-                .pass >img{
-                width: 200px;
-                height: 200px;
-                }
-                .pass>p{
-                font-size: 1.1rem;
-                font-weight: 600;
-                text-align: center;
-                line-height: 1.3;
-                }
-
-    </style>
+    <link rel="stylesheet" href="./css/finish.css">
 </head>
 <body>
         <div class="pass">
-                <h1>闖關成功</h1>
-                <h1 id="second">序號:
-                <?php 
-                        for($i=0;$i<$count;$i++){
-                                echo $connter[$i];
-                        }
-                ?>
-                </h1>
+                <h1>英雄Online</h1>
+                <h1 style="margin-left:100px">健康Mylife</h1>
+                <!-- <h1 id="second">序號:
+                </h1> -->
+                <div class="second">
                 <img src="images2/LOGO.png" alt="">
-                <p>本活動為衛生保健組宣導各式健康促進議題</p>
-                <p>結合時事以平易近人、生活化方式作為傳遞</p>
+                <p>闖關成功<br>序號:<?php echo $connter; ?></p>
+                </div>
+                
+                <p class="text">
+                本活動為衛生保健組宣導各式健康促進議題<br>
+                結合時事以平易近人、生活化方式作為傳遞<br>
                 <br>
-                <p>請截圖本畫面+學生證/教職員證</p>
-                <p>於4/25-27，10:00-16:00</p> 
-                <p>至全人大道帳篷區，兌換神秘小禮物1份</p> 
-                <p>1人1份，名額有限，送完為止</p> 
-                <p>感謝您的參加，衛生保健組關心您</p> 
+                請截圖本畫面+學生證/教職員證<br>
+                於11/14-11/16，10:00-16:00<br>
+                至全人大到帳篷區，兌換神秘小禮物1份<br>
+                1人1份，名額有限，送完為止<br>
+                <br>
+                集滿3種不同角色背景，<br>
+                11/17進行線上抽獎，贈送500元禮券，<br>
+                共10名 (由系統自動判別符合資格者)，<br>
+                感謝您的參加，衛生保健組關心您。
+                </p>
                 
         </div>
 
@@ -85,7 +55,7 @@ $count = strlen($connter);
         });
 
         window.addEventListener("popstate", e=> {
-        window.location.replace('https://jiousaio.com/Lecture/');
+        window.location.replace('https://jiousaio.com/Marvel/');
         });
         </script>
 </body>
