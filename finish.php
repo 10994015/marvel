@@ -44,6 +44,7 @@ $count = strlen($connter);
                 共10名 (由系統自動判別符合資格者)，<br>
                 感謝您的參加，衛生保健組關心您。
                 </p>
+                <a href="./" class="prehome">返回首頁</a>
                 
         </div>
 
