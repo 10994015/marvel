@@ -61,7 +61,7 @@ if(isset($_SESSION['username'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>衛保組急救座談會</title>
+    <title>衛生保健組健康促進活動抽獎系統</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./cms.css">
 </head>
@@ -70,7 +70,7 @@ if(isset($_SESSION['username'])){
         <a href="./logout.php" class="logout btn btn-info">登出</a>
         <div class="center">
             <div class="header">
-                <h2>衛保組急救座談會</h2>
+                <h2>衛生保健組健康促進活動抽獎系統</h2>
             </div>
             <div class="content">
                 <div class="left">
