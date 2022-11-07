@@ -91,7 +91,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
             }
         }else{
            if($type==1){
-                $sql_str = "UPDATE game SET type1 = :type WHERE student  = :student";
+                $sql_str = "UPDATE game SET type1 = :type, time = :time WHERE student  = :student";
                 $stmt = $pdo->prepare($sql_str);
             
                 $student    = $_POST['student'];
@@ -99,23 +99,26 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
             
                 $stmt->bindParam(':student'    ,$student);
                 $stmt->bindParam(':type' ,$type);
+                $stmt->bindParam(':time',$time);
             
                 $stmt->execute();
                 header('Location:./finish.php');
            }elseif($type==2){
-            $sql_str = "UPDATE game SET type2 = :type WHERE student  = :student";
+            $sql_str = "UPDATE game SET type2 = :type, time=:time WHERE student  = :student";
             $stmt = $pdo->prepare($sql_str);
          
             $student    = $_POST['student'];
             $type      = $_POST['type'];
+            
          
             $stmt->bindParam(':student'    ,$student);
             $stmt->bindParam(':type' ,$type);
+            $stmt->bindParam(':time',$time);
          
             $stmt->execute();
             header('Location:./finish.php');
            }elseif($type==3){
-                $sql_str = "UPDATE game SET type3 = :type WHERE student  = :student";
+                $sql_str = "UPDATE game SET type3 = :type, time = :time WHERE student  = :student";
                 $stmt = $pdo->prepare($sql_str);
             
                 $student    = $_POST['student'];
@@ -123,11 +126,12 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
             
                 $stmt->bindParam(':student'    ,$student);
                 $stmt->bindParam(':type' ,$type);
+                $stmt->bindParam(':time',$time);
             
                 $stmt->execute();
                 header('Location:./finish.php');
            }else{
-            $sql_str = "UPDATE game SET type4 = :type WHERE student  = :student";
+            $sql_str = "UPDATE game SET type4 = :type, time = :time WHERE student  = :student";
             $stmt = $pdo->prepare($sql_str);
          
             $student    = $_POST['student'];
@@ -135,6 +139,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
          
             $stmt->bindParam(':student'    ,$student);
             $stmt->bindParam(':type' ,$type);
+            $stmt->bindParam(':time',$time);
          
             $stmt->execute();
             header('Location:./finish.php');
