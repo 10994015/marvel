@@ -18,7 +18,7 @@ $randNum = rand(1,4);
         <input type="hidden" name="type" value="<?php echo $randNum; ?>">
         <div class="startBtn">
             <input type="submit" class="start" value="">
-            <img src="./images2/start.png" alt="">
+            <a href="./" class="prehome">開始遊戲</a>
         </div>
     </form>
 </body>
