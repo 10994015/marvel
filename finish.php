@@ -17,7 +17,7 @@ $count = strlen($connter);
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>衛保組健促計畫</title>
-    <link rel="stylesheet" href="./css/finish.css">
+    <link rel="stylesheet" href="./css/finish2.css">
 </head>
 <body>
         <div class="pass">

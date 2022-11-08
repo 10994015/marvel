@@ -4,7 +4,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
     
     $type = $_POST['type'];
     $scripturl = "script".$type.".js";
-    $questionurl = "question".$type.".js";
+    $questionurl = "quest".$type.".js";
 ?>
 
 <!DOCTYPE html>
