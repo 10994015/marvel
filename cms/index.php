@@ -79,7 +79,7 @@ if(isset($_SESSION['username'])){
                     </select>
                     <div class="list" id="passlist">
                         <?php foreach($RS_users as $user){ ?>
-                            <div class="item sample"><?php echo $user['student']."-".$user['name']." ".$user['time']; ?></div>
+                            <div class="item sample"><?php echo $user['student']."-".$user['name']." ".$user['time']; ?> <span style="color:#fff"><?php echo 'score:'.$user['score']; ?></span> </div>
                         <?php } ?>
                     </div>
                 </div>
