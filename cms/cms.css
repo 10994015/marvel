@@ -157,6 +157,10 @@
   margin: 3px 0;
 }
 
+#cms > .center > .bottom > p.scoreView {
+  cursor: pointer;
+}
+
 #cms footer {
   width: 100%;
   height: 100px;
@@ -177,5 +181,54 @@
   margin: 0;
   padding: 0;
   font-weight: 600;
+}
+
+#cms .scoreModal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+#cms .scoreModal > .scoreModalback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#cms .scoreModal > .content {
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  z-index: 999;
+}
+
+#cms .scoreModal > .content > .header {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background-color: rgba(0, 124, 37, 0.692);
+  text-align: center;
+  line-height: 40px;
+}
+
+#cms .scoreModal > .content ul {
+  overflow-y: scroll;
+  height: 450px;
+  width: 100%;
 }
 /*# sourceMappingURL=cms.css.map */

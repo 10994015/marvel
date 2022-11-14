@@ -8,6 +8,12 @@ const lotterySelect = document.getElementById('lotterySelect');
 let randomNum = 0;
 let winnerHtml = '';
 const winnerList = document.getElementById('winnerList');
+const score5View = document.getElementById('score5View');
+const score4View = document.getElementById('score4View');
+const score3View = document.getElementById('score3View');
+const score2View = document.getElementById('score2View');
+const score1View = document.getElementById('score1View');
+const scoreModalback = document.getElementsByClassName('scoreModalback');
 addSemple.addEventListener('click', ()=>{
     addSemple.classList.remove('btn-success');
     addSemple.classList.add('btn-secondary');
@@ -36,3 +42,22 @@ lotteryBtn.addEventListener('click', ()=>{
 function getRandom(x){
     return Math.floor(Math.random()*x);
 };
+
+score5View.addEventListener('click', viewScoreModalFn);
+score4View.addEventListener('click', viewScoreModalFn);
+score3View.addEventListener('click', viewScoreModalFn);
+score2View.addEventListener('click', viewScoreModalFn);
+score1View.addEventListener('click', viewScoreModalFn);
+
+function viewScoreModalFn(e){
+    let num = e.target.id.split('core')[1].split('V')[0];
+    console.log(num);
+    document.getElementById(`score${num}`).style.display = "flex";
+}
+
+for(let i=0;i<scoreModalback.length;i++){
+    scoreModalback[i].addEventListener('click', closeScoreModal)
+}
+function closeScoreModal(e){
+    e.target.parentNode.style.display = "none";
+}

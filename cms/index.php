@@ -21,29 +21,34 @@ $stmt2->execute();
 $RS_total_users = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 $total = $stmt2 -> rowCount();
 
-$sql_str = "SELECT id FROM game WHERE score=5";
+$sql_str = "SELECT * FROM game WHERE score=5";
 $stmt3 = $pdo -> prepare($sql_str);
 $stmt3->execute();
+$score_5 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 $total5 = $stmt3 -> rowCount();
 
-$sql_str = "SELECT id FROM game WHERE score=4";
+$sql_str = "SELECT * FROM game WHERE score=4";
 $stmt4 = $pdo -> prepare($sql_str);
 $stmt4->execute();
+$score_4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 $total4 = $stmt4 -> rowCount();
 
-$sql_str = "SELECT id FROM game WHERE score=3";
+$sql_str = "SELECT * FROM game WHERE score=3";
 $stmt5 = $pdo -> prepare($sql_str);
 $stmt5->execute();
+$score_3 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
 $total3 = $stmt5 -> rowCount();
 
-$sql_str = "SELECT id FROM game WHERE score=2";
+$sql_str = "SELECT * FROM game WHERE score=2";
 $stmt6 = $pdo -> prepare($sql_str);
 $stmt6->execute();
+$score_2 = $stmt6->fetchAll(PDO::FETCH_ASSOC);
 $total2 = $stmt6 -> rowCount();
 
-$sql_str = "SELECT id FROM game WHERE score=1";
+$sql_str = "SELECT * FROM game WHERE score=1";
 $stmt7 = $pdo -> prepare($sql_str);
 $stmt7->execute();
+$score_1 = $stmt7->fetchAll(PDO::FETCH_ASSOC);
 $total1 = $stmt7 -> rowCount();
 
 $sql_str = "SELECT AVG(score) FROM game";
@@ -103,18 +108,73 @@ if(isset($_SESSION['username'])){
             <div class="bottom">
                 <p>總人數: <?php echo $total; ?></p>
                 <b>通過人數: <?php echo $passTotal; ?> </b>
-                <p>非常滿意: <?php echo $total5; ?></p>
-                <p>滿意: <?php echo $total4; ?></p>
-                <p>普通: <?php echo $total3; ?></p>
-                <p>不滿意: <?php echo $total2; ?></p>
-                <p>非常不滿意: <?php echo $total1; ?></p>
+                <p class="scoreView" id="score5View">非常滿意: <?php echo $total5; ?></p>
+                <p class="scoreView" id="score4View">滿意: <?php echo $total4; ?></p>
+                <p class="scoreView" id="score3View">普通: <?php echo $total3; ?></p>
+                <p class="scoreView" id="score2View">不滿意: <?php echo $total2; ?></p>
+                <p class="scoreView" id="score1View">非常不滿意: <?php echo $total1; ?></p>
                 <b>平均分數: <?php echo $avg; ?> </b>
             </div>
             <footer>
                 <p>中原大學衛保組</p>
             </footer>    
         </div>
-                    
+        <div class="scoreModal" id="score5">
+            <div class="scoreModalback"></div>
+            <div class="content">
+                <div class="header">非常滿意</div>
+            <ul>
+            <?php foreach($score_5 as $item){ ?>
+                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+            <?php  } ?>
+            </ul>
+            </div>
+        </div>
+        <div class="scoreModal" id="score4">
+            <div class="scoreModalback"></div>
+            <div class="content">
+            <div class="header">滿意</div>
+            <ul>
+            <?php foreach($score_4 as $item){ ?>
+                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+            <?php  } ?>
+            </ul>
+            </div>
+        </div>    
+        <div class="scoreModal" id="score3">
+            <div class="scoreModalback"></div>
+            <div class="content">
+            <div class="header">普通</div>
+            <ul>
+            <?php foreach($score_3 as $item){ ?>
+                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+            <?php  } ?>
+            </ul>
+            </div>
+        </div>    
+        <div class="scoreModal" id="score2">
+            <div class="scoreModalback"></div>
+            <div class="content">
+            <div class="header">不滿意</div>
+            <ul>
+            <?php foreach($score_2 as $item){ ?>
+                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+            <?php  } ?>
+            </ul>
+            </div>
+        </div>    
+        <div class="scoreModal" id="score1">
+            <div class="scoreModalback"></div>
+            <div class="content">
+            <div class="header">非常不滿意</div>
+            <ul>
+            <?php foreach($score_1 as $item){ ?>
+                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+            <?php  } ?>
+            </ul>
+            </div>
+        </div>    
+
     </div>
     
     <script src="./cms.js"></script>
