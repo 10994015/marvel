@@ -47,7 +47,7 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
             <img src="" alt="" id="squid">
             <img src="" id="arms">
             <img src="" alt="" id="player">
-            <p id="addscore">-2%</p>
+            <p id="addscore">-4%</p>
     </div>
 
     <div class="qaAll">
@@ -60,10 +60,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                     <!-- <strong id="hint1"></strong> -->
                     <button class="send">送出</button>
             </div>
-            
-            
-            
-            
     </div>
 
     <div class="qaAll">
@@ -124,44 +120,6 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
                 <button class="send">送出</button>
             </div>
     </div>
-
-    <div class="qaAll">
-        <h1 class="error">答錯了!再答一次!<br><i class="fas fa-times-circle"></i></h1>
-        <div class="qa">
-                <p>(7).<span id="question7"></span></p>
-                <label for="q7-a"><input type="radio" name="q7" id="q7-a" class="option7"><span id="q7a"></span></label>
-                <label for="q7-b"><input type="radio" name="q7" id="q7-b" class="option7"><span id="q7b"></span></label>
-                <label for="q7-c"><input type="radio" name="q7" id="q7-c" class="option7"><span id="q7c"></span></label>
-                <!-- <strong id="hint6"></strong> -->
-                <button class="send">送出</button>
-            </div>
-    </div>
-
-    <div class="qaAll">
-        <h1 class="error">答錯了!再答一次!<br><i class="fas fa-times-circle"></i></h1>
-        <div class="qa">
-                <p>(8).<span id="question8"></span></p>
-                <label for="q8-a"><input type="radio" name="q8" id="q8-a" class="option8"><span id="q8a"></span></label>
-                <label for="q8-b"><input type="radio" name="q8" id="q8-b" class="option8"><span id="q8b"></span></label>
-                <label for="q8-c"><input type="radio" name="q8" id="q8-c" class="option8"><span id="q8c"></span></label>
-                <!-- <strong id="hint6"></strong> -->
-                <button class="send">送出</button>
-            </div>
-    </div>
-
-    <div class="qaAll">
-        <h1 class="error">答錯了!再答一次!<br><i class="fas fa-times-circle"></i></h1>
-        <div class="qa">
-                <p>(9).<span id="question9"></span></p>
-                <label for="q9-a"><input type="radio" name="q9" id="q9-a" class="option9"><span id="q9a"></span></label>
-                <label for="q9-b"><input type="radio" name="q9" id="q9-b" class="option9"><span id="q9b"></span></label>
-                <label for="q9-c"><input type="radio" name="q9" id="q9-c" class="option9"><span id="q9c"></span></label>
-                <!-- <strong id="hint6"></strong> -->
-                <button class="send">送出</button>
-            </div>
-    </div>
-   
-
     
     <div class="bingo">
         <strong id="hint1"></strong>
@@ -183,21 +141,8 @@ if(isset($_POST['type']) && $_POST['type'] !=""){
         <strong id="hint5"></strong>
         <h1>答對了!點擊繼續</h1>
     </div>
-    <div class="bingo">
-        <strong id="hint6"></strong>
-        <h1>答對了!點擊繼續</h1>
-    </div>
-    <div class="bingo">
-        <strong id="hint7"></strong>
-        <h1>答對了!點擊繼續</h1>
-    </div>
-    <div class="bingo">
-        <strong id="hint8"></strong>
-        <h1>答對了!點擊繼續</h1>
-    </div>
-   
     <form class="bingo" action="./input.php" method="post"> 
-        <strong id="hint9"></strong>
+        <strong id="hint6"></strong>
         <h1>闖關成功!點擊繼續</h1>
         <input type="hidden" name="hidden" value="correct">
         <input type="hidden" name="type" value="<?php echo $type; ?>">

@@ -23,76 +23,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>衛保組健促計畫</title>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-        }
-        .form{
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: url("./images2/bg.jpg") no-repeat;
-            background-size: cover;
-            box-sizing: border-box;
-            padding: 10px;
-
-        }
-        form{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        form>input{
-            margin: 15px 0;
-            width: 100%;
-            height: 50px;
-            border:none;
-            outline: none;
-            border:1px #ccc solid;
-            border-radius: 10px;
-            padding: 0 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        form>input[type="submit"]{
-            width: 100%;
-            background-color: #ccc;
-            color:#fff;
-            font-weight: 600;
-            font-size: 18px;
-        }
-        .view{
-            display: flex;
-            flex-direction: column;
-        }
-        .Satisfaction{
-            background-color: #fff;
-            padding: 5px;
-            border-radius: 10px;
-            box-sizing: border-box;
-            width: 100%;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif,"微軟正黑體";
-            margin-bottom: 20px;
-        }
-        .Satisfaction>select{
-            width: 90%;
-            margin: auto;
-            height: 40px;
-            border:none;
-            outline: none;
-            border:1px #333 solid;
-            border-radius: 5px;
-        }
-    
-    </style>
+    <link rel="stylesheet" href="./css/input.css">
 </head>
 <body>
    <div class="form">
@@ -108,35 +39,33 @@ try {
                     <option value="2">不滿意</option>
                     <option value="1">非常不滿意</option>
                 </select>
+                <p style="text-align:center;font-size:18px;font-weight: 600;margin-top:10px">您覺得本次活動學習到?(可複選)</p>
+                <label for="q1">
+                    <input type="checkbox" id="q1" name="q1" class="study">瞭解含糖飲料對身體的負面影響及多喝白開水的益處
+                </label>
+                <label for="q2">
+                    <input type="checkbox" id="q2" name="q2" class="study">飲料紅黃綠燈有助於選擇飲品的判斷
+                </label>
+                <label for="q3">
+                    <input type="checkbox" id="q3" name="q3" class="study">瞭解日常護眼技巧及飲食
+                </label>
+                <label for="q4">
+                    <input type="checkbox" id="q4" name="q4" class="study">瞭解如何照顧傷口，降低感染的發生
+                </label>
+                <label for="q5">
+                    <input type="checkbox" id="q5" name="q5" class="study">瞭解傷口感染出現的症狀：紅腫熱痛
+                </label>
+                <label for="q6">
+                    <input type="checkbox" id="q6" name="q6" class="study">學會執行簡易自我傷口處理
+                </label>
+                <textarea name="message" id="" placeholder="您對本次活動心得回饋..."></textarea>
             </div>
             <input type="hidden" name="inputData" value="insert">
             <input type="hidden" name="type" value="<?php echo $type; ?>">
             <input type="submit" value="完成" id="finish" disabled>
         </form>   
    </div>
-    <script>
-      const student = document.getElementById('student');
-      const finish = document.getElementById('finish');
-      const name = document.getElementById('name');
-      student.addEventListener("change",()=>{
-          console.log("okok");
-          
-        if(student!==" " && name!==" "){
-            finish.disabled  =false;
-            finish.style.background = "#BF3434";
-            
-        }
-      });
-      name.addEventListener("change",()=>{
-        if(student!==" " && name!==" "){
-            finish.disabled  =false;
-            finish.style.background = "#BF3434";
-
-        }
-      });
-      
-      
-    </script>
+    <script src="./js/input.js"></script>
 </body>
 </html>
 <?php

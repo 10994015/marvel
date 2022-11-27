@@ -79,7 +79,7 @@ function disappear(){
     html += '<div class="progressBarItem"></div>';
     progressBar.innerHTML = html;
     // progressBarNum.textContent = Number(progressBarNum.textContent)+1;
-    progressBarNum.innerHTML = (100- times*2) +"/100";
+    progressBarNum.innerHTML = (100- times*4) +"/100";
 
     for(var d=0;d<randomBtnClass.length;d++){
         randomBtnClass[d].style.display="none";
@@ -97,18 +97,6 @@ function run(){
         Appear();
         swap();
     }, 900)
-    // gameGo = setInterval(() => {
-    //     // pos-=5;
-    //     // main.style.backgroundPosition  ="0px "+pos+"px";
-    //     src+=1;
-    //     if(src>3){
-    //         src=1;
-    //     }
-    //     player.src="./images/player"+src+".png";
-        
-    //     start();
-    // }, 400);
-    
 }
 for(var v=0;v<bingo.length-1;v++){
     bingo[v].addEventListener("click",run);
@@ -121,15 +109,14 @@ function swap(){
 }
 function start(){
     
-    if(times==5){
+    if(times==4){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
-        // clearInterval(gameGo);
         clearInterval(cycle);
         qaAll[0].style.display = "flex";
     }
-    if(times==11){
+    if(times==8){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -137,7 +124,7 @@ function start(){
         qaAll[1].style.display = "flex";
         
     }
-    if(times==17){
+    if(times==13){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -145,7 +132,7 @@ function start(){
         qaAll[2].style.display = "flex";
        
     }
-    if(times==24){
+    if(times==18){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -153,7 +140,7 @@ function start(){
         qaAll[3].style.display = "flex";
       
     }
-    if(times==30){
+    if(times==22){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -161,7 +148,7 @@ function start(){
         qaAll[4].style.display = "flex";
         
     }
-    if(times==35){
+    if(times==25){
         times+=1;
         html += '<div class="progressBarItem"></div>';
         progressBar.innerHTML = html;
@@ -169,42 +156,6 @@ function start(){
         qaAll[5].style.display = "flex";
         
     }
-    if(times==40){
-        times+=1;
-        html += '<div class="progressBarItem"></div>';
-        progressBar.innerHTML = html;
-        clearInterval(cycle);
-        qaAll[6].style.display = "flex";
-        
-    }
-    if(times==45){
-        times+=1;
-        html += '<div class="progressBarItem"></div>';
-        progressBar.innerHTML = html;
-        clearInterval(cycle);
-        qaAll[7].style.display = "flex";
-        
-    }
-    if(times==50){
-        times+=1;
-        html += '<div class="progressBarItem"></div>';
-        progressBar.innerHTML = html;
-        clearInterval(cycle);
-        qaAll[8].style.display = "flex";
-        
-    }
-    // if(times==30){
-    //     times+=1;
-    //     html += '<div class="progressBarItem"></div>';
-    //     progressBar.innerHTML = html;
-    //     clearInterval(gameGo);
-    //     clearInterval(cycle);
-    //     qaAll[6].style.display = "flex";
-    //     squid.src="./images/squid2.png";
-    //     setTimeout(()=>{
-    //         squid.src="./images/squid3.png";
-    //     },300)
-    // }
 }
 bingo[bingo.length-1].addEventListener("click",()=>{
     clearInterval(clacSenend);
