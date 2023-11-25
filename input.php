@@ -27,7 +27,7 @@ try {
 </head>
 <body>
    <div class="form">
-        <form action="add.php"" method="post">
+        <form action="add.php" method="post">
             <input type="text" placeholder="請輸入學號" name="student" min="8" max="8" id="student" required>
             <input type="text" placeholder="請輸入姓名" name="name" required id="name">
             <div class="Satisfaction">
@@ -41,22 +41,25 @@ try {
                 </select>
                 <p style="text-align:center;font-size:18px;font-weight: 600;margin-top:10px">您覺得本次活動學習到?(可複選)</p>
                 <label for="q1">
-                    <input type="checkbox" id="q1" name="q1" class="study">瞭解含糖飲料對身體的負面影響及多喝白開水的益處
+                    <input type="checkbox" id="q1" name="q1" class="study">瞭解運動對身體的好處及重要性，願意培養運動習慣。
                 </label>
                 <label for="q2">
-                    <input type="checkbox" id="q2" name="q2" class="study">飲料紅黃綠燈有助於選擇飲品的判斷
+                    <input type="checkbox" id="q2" name="q2" class="study">瞭解含糖飲料對身體的負面影響及多喝白開水的益處。
                 </label>
                 <label for="q3">
-                    <input type="checkbox" id="q3" name="q3" class="study">瞭解日常護眼技巧及飲食
+                    <input type="checkbox" id="q3" name="q3" class="study">飲料紅黃綠燈有助於選擇飲品的判斷。
                 </label>
                 <label for="q4">
-                    <input type="checkbox" id="q4" name="q4" class="study">瞭解如何照顧傷口，降低感染的發生
+                    <input type="checkbox" id="q4" name="q4" class="study">瞭解如何照顧傷口，降低紅腫熱痛感染的發生。
                 </label>
                 <label for="q5">
-                    <input type="checkbox" id="q5" name="q5" class="study">瞭解傷口感染出現的症狀：紅腫熱痛
+                    <input type="checkbox" id="q5" name="q5" class="study">學會執行簡易自我傷口處理。
                 </label>
                 <label for="q6">
-                    <input type="checkbox" id="q6" name="q6" class="study">學會執行簡易自我傷口處理
+                    <input type="checkbox" id="q6" name="q6" class="study">我願意將今日所學的健康知識傳遞給身邊的朋友與同學。
+                </label>
+                <label for="q7">
+                    <input type="checkbox" id="q7" name="q7" class="study">我會想主動學習更多有關運動、減糖、護眼及傷害預防處理的知識。
                 </label>
                 <textarea name="message" id="" placeholder="您對本次活動心得回饋..."></textarea>
             </div>

@@ -21,16 +21,16 @@ $count = strlen($connter);
 </head>
 <body>
         <div class="pass">
-                <h1>英雄Online</h1>
-                <h1 style="margin-left:100px">健康Mylife</h1>
+                <!-- <h1>英雄Online</h1> -->
+                <!-- <h1 style="margin-left:100px">健康Mylife</h1> -->
                 <!-- <h1 id="second">序號:
                 </h1> -->
-                <div class="second">
+                <!-- <div class="second">
                 <img src="images2/LOGO.png" alt="">
                 <p>闖關成功<br>序號:<?php echo $connter; ?></p>
-                </div>
+                </div> -->
                 
-                <p class="text">
+                <!-- <p class="text">
                 本活動為衛生保健組宣導各式健康促進議題<br>
                 結合時事以平易近人、生活化方式作為傳遞<br>
                 <br>
@@ -43,7 +43,7 @@ $count = strlen($connter);
                 11/17進行線上抽獎，贈送500元禮券，<br>
                 共10名 (由系統自動判別符合資格者)，<br>
                 感謝您的參加，衛生保健組關心您。
-                </p>
+                </p> -->
                 <a href="./" class="prehome">返回首頁</a>
                 
         </div>

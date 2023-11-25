@@ -3,7 +3,7 @@
     padding: 0;
 }
 form{
-    background:#050C26;
+    background:#E38180;
     position: relative;
 
 }
@@ -16,7 +16,7 @@ form>img{
 form > .startBtn {
     position: absolute;
     display: block;
-    top: 39%;
+    bottom: 10px;
     right:10px;
     display: flex;
     transform: translateY(-50%);
@@ -27,11 +27,11 @@ form > .startBtn {
 form > .startBtn>a{
     width:90px;
     height: 90px;
-    background-color: #37E3F0;
-    color:#184A86;
+    background-color: #FF564D;
+    color:#fff;
     display: block;
     border-radius: 50%;
-    box-shadow:  0px 0px 15px #37E3F0;
+    box-shadow:  0px 0px 15px #C42601;
     text-decoration: none;
     text-align: center;
     line-height: 90px;

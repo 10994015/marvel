@@ -19,6 +19,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         $q4 = (empty($_POST['q4'])) ? '0' : '1';
         $q5 = (empty($_POST['q5'])) ? '0' : '1';
         $q6 = (empty($_POST['q6'])) ? '0' : '1';
+        $q7 = (empty($_POST['q7'])) ? '0' : '1';
 
         $sql_str = "SELECT * FROM game WHERE student = :student";
 
@@ -29,7 +30,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
        
         $total = $stmt->rowCount();  
         
-        $sql_str = "INSERT INTO giveback (student, score, q1, q2, q3, q4, q5, q6, message, time) VALUES (:student, :score, :q1, :q2, :q3, :q4, :q5, :q6, :message, :time2)";
+        $sql_str = "INSERT INTO giveback (student, score, q1, q2, q3, q4, q5, q6, q7, message, time) VALUES (:student, :score, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :message, :time2)";
         $stmt_giveback = $pdo->prepare($sql_str);
         
         $stmt_giveback->bindParam(':student',$student);
@@ -40,6 +41,7 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
         $stmt_giveback->bindParam(':q4',$q4);
         $stmt_giveback->bindParam(':q5',$q5);
         $stmt_giveback->bindParam(':q6',$q6);
+        $stmt_giveback->bindParam(':q7',$q7);
         $stmt_giveback->bindParam(':message',$message);
         $stmt_giveback->bindParam(':time2',$time2);
 

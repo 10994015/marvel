@@ -5,11 +5,11 @@
 }
 
 .pass{
-    background-image: url('../images2/pass2.png');
+    background-image: url('../images2/pass.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    background-color: #787EA5;
+    background-color: #E38180;
     position: fixed;
     top: 0;
     left: 0;
@@ -50,16 +50,16 @@ margin-left: 20px;
 }
 .pass>.prehome{
     position: absolute;
-    top: 55%;
-    right:20px;
+    bottom: 10px;
+    right:10px;
     transform: translateY(-50%);
     width:90px;
     height: 90px;
-    background-color: #37E3F0;
-    color:#184A86;
+    background-color: #FF564D;
+    color:#fff;
     display: block;
     border-radius: 50%;
-    box-shadow:  0px 0px 15px #37E3F0;
+    box-shadow:  0px 0px 15px #C42601;
     text-decoration: none;
     text-align: center;
     line-height: 90px;
