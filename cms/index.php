@@ -58,6 +58,7 @@ $avg = $stmt8->fetchColumn();
 
 ?>
 <?php 
+date_default_timezone_set('Asia/Taipei');
 if(isset($_SESSION['username'])){
 ?>
 <!DOCTYPE html>
@@ -69,9 +70,26 @@ if(isset($_SESSION['username'])){
     <title>112年健康體育週 團體衛教講座</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./cms.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <div id="cms">
+    <div id="cms" x-data="{
+        init(){
+            this.getUsers();
+        },
+        data:{},
+        selectDate:1,
+        changeDate(){
+            this.getUsers();
+        },
+        getUsers(){
+            axios.get('./getUserData.php?date='+this.selectDate).then(res=>{
+                console.log(res)
+                this.data = res.data
+            })
+        }
+    }">
         <a href="./logout.php" class="logout btn btn-info">登出</a>
         <div class="center">
             <div class="header">
@@ -79,13 +97,32 @@ if(isset($_SESSION['username'])){
             </div>
             <div class="content">
                 <div class="left">
-                    <select class="form-select" aria-label="Default select example" id="toggleView">
+                    <select class="form-select" aria-label="Default select example" id="toggleView" x-model="selectDate" @change="changeDate()">
                         <option value="1" selected>僅顯示符合資格者</option>
+                        <option value="1701648600">12/4 星期一 第一場 08:10-09:50</option>
+                        <option value="1701655800">12/4 星期一 第二場 10:10-11:50</option>
+                        <option value="1701666600">12/4 星期一 第三場 13:10-14:50</option>
+                        <option value="1701673800">12/4 星期一 第四場 15:10-16:50</option>
+                        <option value="1701735000">12/5 星期二 第一場 08:10-09:50</option>
+                        <option value="1701742200">12/5 星期二 第二場 10:10-11:50</option>
+                        <option value="1701753000">12/5 星期二 第三場 13:10-14:50</option>
+                        <option value="1701760200">12/5 星期二 第四場 15:10-16:50</option>
+                        <option value="1701821400">12/6 星期三 第一場 08:10-09:50</option>
+                        <option value="1701839400">12/6 星期三 第二場 13:10-14:50</option>
+                        <option value="1701846600">12/6 星期三 第三場 15:10-16:50</option>
+                        <option value="1701907800">12/7 星期四 第一場 08:10-09:50</option>
+                        <option value="1701915000">12/7 星期四 第二場 10:10-11:50</option>
+                        <option value="1701925800">12/7 星期四 第三場 13:10-14:50</option>
+                        <option value="1701933000">12/7 星期四 第四場 15:10-16:50</option>
+                        <option value="1701994200">12/8 星期五 第一場 08:10-09:50</option>
+                        <option value="1702001400">12/8 星期五 第二場 10:10-11:50</option>
+                        <option value="1702012200">12/8 星期五 第三場 13:10-14:50</option>
+                        <option value="1702019400">12/8 星期五 第四場 15:10-16:50</option>
                     </select>
                     <div class="list" id="passlist">
-                        <?php foreach($RS_users as $user){ ?>
-                            <div class="item sample"><?php echo $user['student']."-".$user['name']." ".$user['time']; ?> <span style="color:#fff"><?php echo 'score:'.$user['score']; ?></span> </div>
-                        <?php } ?>
+                        <template x-for="item in data">
+                        <div class="item sample" x-html="item.student + '-' + item.name + '-' + item.time + '&nbsp;&nbsp;&nbsp;&nbsp;<span style=color:#fff>' + item.score + '分</span>'">10994015 - 李承諺 - 時間 : 5分 </div>
+                        </template>
                     </div>
                 </div>
                 <div class="right">
