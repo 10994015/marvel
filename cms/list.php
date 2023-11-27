@@ -4,6 +4,13 @@ $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.stu
 $stmt = $pdo->prepare($sql_str);
 $stmt->execute();
 $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$score = [
+    1=>'非常不滿意',
+    2=>'不滿意',
+    3=>'普通',
+    4=>'滿意',
+    5=>'非常滿意'
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +58,7 @@ $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     ?>
                     </ul>
                 </th>
-                <th scope="col"><?php echo $item['score']; ?></th>
+                <th scope="col"><?php echo $score[$item['score']]; ?></th>
                 <th scope="col"><?php echo $item['message']; ?></th>
                 <th scope="col"><?php echo $item['time']; ?></th>
                 </tr>

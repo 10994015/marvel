@@ -119,6 +119,7 @@
 #cms > .center > .list-table {
   width: 100%;
   background-color: #FFFFF5;
+  font-weight: 100;
 }
 #cms footer {
   width: 100%;

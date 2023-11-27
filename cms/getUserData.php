@@ -14,7 +14,7 @@ else{
     $enddate =  $dateTime->format('Y/m/d H:i');
 }
 
-$sql_str = "SELECT * FROM game WHERE time BETWEEN :startdate AND :enddate AND type1=1 AND type2=2 AND type3=3 AND type4=4";
+$sql_str = "SELECT * FROM game WHERE time BETWEEN :startdate AND :enddate";
 $stmt = $pdo->prepare($sql_str);
 $stmt->bindParam(':startdate',$startdate);
 $stmt->bindParam(':enddate',$enddate);
