@@ -6,14 +6,15 @@ if($timestamp == 1){
 
     $startdate = date("2000-1-1 00:00");
     $enddate = date("2030-1-1 00:00");
-}else{
+}
+else{
     $startdate = date("Y-m-d H:i", $timestamp);
     $dateTime = new DateTime($startdate);
     $dateTime->add(new DateInterval('PT1H40M'));
     $enddate =  $dateTime->format('Y/m/d H:i');
 }
 
-$sql_str = "SELECT * FROM game WHERE time BETWEEN :startdate AND :enddate";
+$sql_str = "SELECT * FROM game WHERE time BETWEEN :startdate AND :enddate AND type1=1 AND type2=2 AND type3=3 AND type4=4";
 $stmt = $pdo->prepare($sql_str);
 $stmt->bindParam(':startdate',$startdate);
 $stmt->bindParam(':enddate',$enddate);

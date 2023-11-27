@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #cms {
@@ -10,7 +9,6 @@
   background-color: #E7EEE6;
   min-height: 100vh;
 }
-
 #cms .logout {
   position: absolute;
   top: 30px;
@@ -21,13 +19,11 @@
   text-decoration: none;
   color: #fff;
 }
-
 #cms > .center {
-  width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   height: 100%;
 }
-
 #cms > .center > .header {
   width: 100%;
   height: 100px;
@@ -35,49 +31,31 @@
   color: #BF3334;
   line-height: 100px;
   background-color: #F2F2E8;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 #cms > .center > .header > h2 {
   font-size: 26px;
   font-weight: 700;
 }
-
 #cms > .center > .content {
   width: 100%;
   background-color: #FFFFF5;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px 0 30px;
 }
-
 #cms > .center > .content > .left {
   width: 50%;
   padding: 16px;
 }
-
 #cms > .center > .content > .left > select {
   width: 95%;
   margin-bottom: 15px;
 }
-
 #cms > .center > .content > .left > .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 95%;
   height: 500px;
   overflow-y: scroll;
@@ -85,52 +63,34 @@
   border: 1px #ccc solid;
   border-radius: 6px;
 }
-
 #cms > .center > .content > .left > .list.totalList {
   display: none;
 }
-
 #cms > .center > .content > .left > .list > .item {
   width: 100%;
   padding: 9px 12px;
   border-bottom: 1px #ccc solid;
 }
-
 #cms > .center > .content > .right {
   width: 50%;
 }
-
 #cms > .center > .content > .right > .choose {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 0;
   padding-right: 16px;
 }
-
 #cms > .center > .content > .right > .choose > select {
   width: 150px;
   font-size: 15px;
 }
-
 #cms > .center > .content > .right > .choose > button {
   width: 150px;
 }
-
 #cms > .center > .content > .right > .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 95%;
   height: 500px;
   overflow-y: scroll;
@@ -138,69 +98,55 @@
   border: 1px #ccc solid;
   border-radius: 6px;
 }
-
 #cms > .center > .content > .right > .list > div {
   width: 100%;
   padding: 3px 12px;
   font-weight: 700px;
 }
-
 #cms > .center > .bottom {
   width: 100%;
   background-color: #FFFFF5;
   padding: 10px 20px 20px;
 }
-
 #cms > .center > .bottom > p {
   margin: 0;
   padding: 0;
   margin: 3px 0;
 }
-
 #cms > .center > .bottom > p.scoreView {
   cursor: pointer;
 }
-
+#cms > .center > .list-table {
+  width: 100%;
+  background-color: #FFFFF5;
+}
 #cms footer {
   width: 100%;
   height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-color: #F2F2E8;
   color: #5E7380;
 }
-
-#cms footer p {
+#cms footer a {
   margin: 0;
   padding: 0;
   font-weight: 600;
+  color: #5E7380;
+  text-decoration: none;
 }
-
 #cms .scoreModal {
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   display: none;
 }
-
 #cms .scoreModal > .scoreModalback {
   position: absolute;
   top: 0;
@@ -209,14 +155,12 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 #cms .scoreModal > .content {
   width: 400px;
   height: 500px;
   background-color: #fff;
   z-index: 999;
 }
-
 #cms .scoreModal > .content > .header {
   width: 100%;
   height: 40px;
@@ -225,10 +169,8 @@
   text-align: center;
   line-height: 40px;
 }
-
 #cms .scoreModal > .content ul {
   overflow-y: scroll;
   height: 450px;
   width: 100%;
-}
-/*# sourceMappingURL=cms.css.map */
+}/*# sourceMappingURL=cms.css.map */

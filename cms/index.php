@@ -21,37 +21,37 @@ $stmt2->execute();
 $RS_total_users = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 $total = $stmt2 -> rowCount();
 
-$sql_str = "SELECT * FROM game WHERE score=5";
+$sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=5";
 $stmt3 = $pdo -> prepare($sql_str);
 $stmt3->execute();
 $score_5 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 $total5 = $stmt3 -> rowCount();
 
-$sql_str = "SELECT * FROM game WHERE score=4";
+$sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=4";
 $stmt4 = $pdo -> prepare($sql_str);
 $stmt4->execute();
 $score_4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 $total4 = $stmt4 -> rowCount();
 
-$sql_str = "SELECT * FROM game WHERE score=3";
+$sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=3";
 $stmt5 = $pdo -> prepare($sql_str);
 $stmt5->execute();
 $score_3 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
 $total3 = $stmt5 -> rowCount();
 
-$sql_str = "SELECT * FROM game WHERE score=2";
+$sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=2";
 $stmt6 = $pdo -> prepare($sql_str);
 $stmt6->execute();
 $score_2 = $stmt6->fetchAll(PDO::FETCH_ASSOC);
 $total2 = $stmt6 -> rowCount();
 
-$sql_str = "SELECT * FROM game WHERE score=1";
+$sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=1";
 $stmt7 = $pdo -> prepare($sql_str);
 $stmt7->execute();
 $score_1 = $stmt7->fetchAll(PDO::FETCH_ASSOC);
 $total1 = $stmt7 -> rowCount();
 
-$sql_str = "SELECT AVG(score) FROM game";
+$sql_str = "SELECT AVG(score) FROM giveback";
 $stmt8 = $pdo -> prepare($sql_str);
 $stmt8->execute();
 $avg = $stmt8->fetchColumn();
@@ -98,7 +98,7 @@ if(isset($_SESSION['username'])){
             <div class="content">
                 <div class="left">
                     <select class="form-select" aria-label="Default select example" id="toggleView" x-model="selectDate" @change="changeDate()">
-                        <option value="1" selected>僅顯示符合資格者</option>
+                        <option value="1" selected>全部(僅顯示符合資格者)</option>
                         <option value="1701648600">12/4 星期一 第一場 08:10-09:50</option>
                         <option value="1701655800">12/4 星期一 第二場 10:10-11:50</option>
                         <option value="1701666600">12/4 星期一 第三場 13:10-14:50</option>
@@ -121,7 +121,7 @@ if(isset($_SESSION['username'])){
                     </select>
                     <div class="list" id="passlist">
                         <template x-for="item in data">
-                        <div class="item sample" x-html="item.student + '-' + item.name + '-' + item.time + '&nbsp;&nbsp;&nbsp;&nbsp;<span style=color:#fff>' + item.score + '分</span>'">10994015 - 李承諺 - 時間 : 5分 </div>
+                        <div class="item sample" x-html="item.student + '-' + item.name + '-' + item.time">10994015 - 李承諺 - 時間 : 5分 </div>
                         </template>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ if(isset($_SESSION['username'])){
                 <b>平均分數: <?php echo $avg; ?> </b>
             </div>
             <footer>
-                <p>中原大學衛保組</p>
+                <a href="./list.php">中原大學衛保組</a>
             </footer>    
         </div>
         <div class="scoreModal" id="score5">
