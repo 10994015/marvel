@@ -2,6 +2,8 @@
 require_once('../config/connection.php');
 require_once('../config/assist.php');
 // if(isset($_SESSION['name'])){
+date_default_timezone_set('Asia/Taipei');
+if(isset($_SESSION['username'])){
 $sql_str = "SELECT * FROM game WHERE 
 (type1=1 AND type2=2 AND type3=3) 
 OR (type1=1 AND type2=2 AND type4=4) 
@@ -22,45 +24,48 @@ $RS_total_users = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 $total = $stmt2 -> rowCount();
 
 $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=5";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT RankedStudents.*, game.name FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 AND RankedStudents.score=5 ORDER BY RankedStudents.time DESC";
 $stmt3 = $pdo -> prepare($sql_str);
 $stmt3->execute();
 $score_5 = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 $total5 = $stmt3 -> rowCount();
 
 $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=4";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT RankedStudents.*, game.name FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 AND RankedStudents.score=4 ORDER BY RankedStudents.time DESC";
 $stmt4 = $pdo -> prepare($sql_str);
 $stmt4->execute();
 $score_4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
 $total4 = $stmt4 -> rowCount();
 
 $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=3";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT RankedStudents.*, game.name FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 AND RankedStudents.score=3 ORDER BY RankedStudents.time DESC";
 $stmt5 = $pdo -> prepare($sql_str);
 $stmt5->execute();
 $score_3 = $stmt5->fetchAll(PDO::FETCH_ASSOC);
 $total3 = $stmt5 -> rowCount();
 
 $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=2";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT RankedStudents.*, game.name FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 AND RankedStudents.score=2 ORDER BY RankedStudents.time DESC";
 $stmt6 = $pdo -> prepare($sql_str);
 $stmt6->execute();
 $score_2 = $stmt6->fetchAll(PDO::FETCH_ASSOC);
 $total2 = $stmt6 -> rowCount();
 
 $sql_str = "SELECT giveback.*, game.name FROM giveback JOIN game ON giveback.student = game.student WHERE giveback.score=1";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT RankedStudents.*, game.name FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 AND RankedStudents.score=1 ORDER BY RankedStudents.time DESC";
 $stmt7 = $pdo -> prepare($sql_str);
 $stmt7->execute();
 $score_1 = $stmt7->fetchAll(PDO::FETCH_ASSOC);
 $total1 = $stmt7 -> rowCount();
 
 $sql_str = "SELECT AVG(score) FROM giveback";
+$sql_str = "WITH RankedStudents  AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY giveback.student ORDER BY giveback.id DESC) AS rn FROM giveback ) SELECT AVG(RankedStudents.score) FROM RankedStudents JOIN game ON RankedStudents.student = game.student WHERE rn = 1 ORDER BY RankedStudents.time DESC";
 $stmt8 = $pdo -> prepare($sql_str);
 $stmt8->execute();
 $avg = $stmt8->fetchColumn();
 
 ?>
-<?php 
-date_default_timezone_set('Asia/Taipei');
-if(isset($_SESSION['username'])){
-?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -144,7 +149,6 @@ if(isset($_SESSION['username'])){
             </div>
             <div class="bottom">
                 <p>總人數: <?php echo $total; ?></p>
-                <b>通過人數: <?php echo $passTotal; ?> </b>
                 <p class="scoreView" id="score5View">非常滿意: <?php echo $total5; ?></p>
                 <p class="scoreView" id="score4View">滿意: <?php echo $total4; ?></p>
                 <p class="scoreView" id="score3View">普通: <?php echo $total3; ?></p>
