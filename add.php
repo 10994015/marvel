@@ -2,7 +2,10 @@
 require_once('./config/connection.php');
 require_once('./config/assist.php');
 
-
+if(!isset($_POST['student']) ||  $_POST['student'] == 0){
+    header('Location:./500.php'); 
+    exit;
+    }
 if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
     try{
         $type = $_POST['type'];
@@ -27,9 +30,10 @@ if(isset($_POST['inputData']) && $_POST['inputData']=='insert'){
  
         $stmt->bindParam(':student',$student);
         $stmt->execute();
-       
-        $total = $stmt->rowCount();  
         
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $total = $stmt->rowCount();  
+ 
         $sql_str = "INSERT INTO giveback (student, score, q1, q2, q3, q4, q5, q6, q7, message, time) VALUES (:student, :score, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :message, :time2)";
         $stmt_giveback = $pdo->prepare($sql_str);
         

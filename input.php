@@ -27,8 +27,8 @@ try {
 </head>
 <body>
    <div class="form">
-        <form action="add.php" method="post">
-            <input type="text" placeholder="請輸入學號" name="student" min="8" max="8" id="student" required>
+        <form action="add.php" method="post" id="form">
+            <input type="number" placeholder="請輸入學號" name="student" min="8" max="8" id="student" required>
             <input type="text" placeholder="請輸入姓名" name="name" required id="name">
             <div class="Satisfaction">
                 <p style="text-align:center;font-size:18px;font-weight: 600;">您對本次活動的滿意度為何?</p>
@@ -65,10 +65,23 @@ try {
             </div>
             <input type="hidden" name="inputData" value="insert">
             <input type="hidden" name="type" value="<?php echo $type; ?>">
-            <input type="submit" value="完成" id="finish" disabled>
+            <input type="button" value="完成" id="finish" disabled>
         </form>   
    </div>
     <script src="./js/input.js"></script>
+    <script>
+        finish.addEventListener('click', ()=>{
+            if(student.value == '' || student.value == 0){
+                alert('請輸入正確學號!')
+                return
+            }
+            if(name.value == '' || name.value == 0){
+                alert('請輸入正確姓名!')
+                return
+            }
+            form.submit();
+        })
+    </script>
 </body>
 </html>
 <?php

@@ -166,7 +166,7 @@ $avg = $stmt8->fetchColumn();
                 <div class="header">非常滿意</div>
             <ul>
             <?php foreach($score_5 as $item){ ?>
-                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+                <li><?php echo $item['student']."-__".$item['name']."-score:".$item['score']; ?></li>
             <?php  } ?>
             </ul>
             </div>
@@ -177,7 +177,7 @@ $avg = $stmt8->fetchColumn();
             <div class="header">滿意</div>
             <ul>
             <?php foreach($score_4 as $item){ ?>
-                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+                <li><?php echo $item['student']."-__".$item['name']."-score:".$item['score']; ?></li>
             <?php  } ?>
             </ul>
             </div>
@@ -188,7 +188,7 @@ $avg = $stmt8->fetchColumn();
             <div class="header">普通</div>
             <ul>
             <?php foreach($score_3 as $item){ ?>
-                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+                <li><?php echo $item['student']."-__".$item['name']."-score:".$item['score']; ?></li>
             <?php  } ?>
             </ul>
             </div>
@@ -199,7 +199,7 @@ $avg = $stmt8->fetchColumn();
             <div class="header">不滿意</div>
             <ul>
             <?php foreach($score_2 as $item){ ?>
-                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+                <li><?php echo $item['student']."-__".$item['name']."-score:".$item['score']; ?></li>
             <?php  } ?>
             </ul>
             </div>
@@ -210,7 +210,7 @@ $avg = $stmt8->fetchColumn();
             <div class="header">非常不滿意</div>
             <ul>
             <?php foreach($score_1 as $item){ ?>
-                <li><?php echo $item['student']."-".$item['name']."-score:".$item['score']; ?></li>
+                <li><?php echo $item['student']."-__".$item['name']."-score:".$item['score']; ?></li>
             <?php  } ?>
             </ul>
             </div>
