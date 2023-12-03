@@ -183,4 +183,27 @@
   overflow-y: scroll;
   height: 450px;
   width: 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button, .pagination select {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.pagination button:hover, .pagination select:hover {
+  background-color: #eee;
+}
+
+.pagination select {
+  padding: 5px;
 }/*# sourceMappingURL=cms.css.map */

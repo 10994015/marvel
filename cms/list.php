@@ -30,30 +30,10 @@ $feedback = $stmt->fetch(PDO::FETCH_ASSOC);
     
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- 引入 jQuery -->
-   
+   <script src="./alpine.js"></script>
 </head>
 <body>
-<div id="cms" x-data="{
-    list:{
-        1:{show:true},
-        2:{show:false}
-    },
-    toggleList(type){
-        this.list[1].show = false
-        this.list[2].show = false
-        this.list[type].show = true
-    },
-    tableToExel(){
-        var table2excel = new Table2Excel();
-        if(this.list[1].show){
-            this.list[2].show = true
-            table2excel.export(document.querySelectorAll('table'));
-        }else{
-            this.list[1].show = true
-            table2excel.export(document.querySelectorAll('table'));
-        }
-    }
-}">
+<div id="cms" x-data="alpineList">
     <a href="./" class="goback btn btn-primary">回列表</a>
     <a href="./logout.php" class="logout btn btn-info">登出</a>
     <div class="center">
@@ -64,7 +44,18 @@ $feedback = $stmt->fetch(PDO::FETCH_ASSOC);
             <button type="button" :class="['btn', (list[1].show) ?  'btn-primary' : 'btn-secondary']" @click="toggleList(1)">使用者統計</button>
             <button type="button" :class="['btn', (list[2].show) ?  'btn-primary' : 'btn-secondary']" @click="toggleList(2)">回饋統計</button>
         </div>
-        <div class="export-excel">
+        <div class="export-excel my-3" >
+            <label for=""  x-show="list[1].show" >
+                <select class="form-select" x-model="selectnum" @change="initPage();getData();">
+                    <option value="9999999999">顯示全部</option>
+                    <option value="10">顯示10筆</option>
+                    <option value="50">顯示50筆</option>
+                    <option value="100">顯示100筆</option>
+                    <option value="250">顯示50筆</option>
+                    <option value="500">顯示500筆</option>
+                </select>
+            </label>
+           
             <button class="btn btn-success" @click="tableToExel()">匯出Excel</button>
         </div>
         <table class="table list-table" x-show="list[1].show"  x-ref="table1">
@@ -80,31 +71,42 @@ $feedback = $stmt->fetch(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($list as $item): ?>
-                <tr>
-                <th scope="col"><?php echo $item['id']; ?></th>
-                <th scope="col"><?php echo $item['student']; ?></th>
-                <th scope="col"><?php echo $item['name']; ?></th>
-                <th scope="col">
-                    <ul>
-                    <?php
-                     echo $item['q1']==1 ? '<li>瞭解運動對身體的好處及重要性，願意培養運動習慣。</li>' : '';
-                     echo $item['q2']==1 ? '<li>瞭解含糖飲料對身體的負面影響及多喝白開水的益處。</li>' : '';
-                     echo $item['q3']==1 ? '<li>飲料紅黃綠燈有助於選擇飲品的判斷。</li>' : '';
-                     echo $item['q4']==1 ? '<li>瞭解如何照顧傷口，降低紅腫熱痛感染的發生。</li>' : '';
-                     echo $item['q5']==1 ? '<li>學會執行簡易自我傷口處理。</li>' : '';
-                     echo $item['q6']==1 ? '<li>我願意將今日所學的健康知識傳遞給身邊的朋友與同學。</li>' : '';
-                     echo $item['q7']==1 ? '<li>我會想主動學習更多有關運動、減糖、護眼及傷害預防處理的知識。</li>' : '';
-                    ?>
-                    </ul>
-                </th>
-                <th scope="col"><?php echo $score[$item['score']]; ?></th>
-                <th scope="col"><?php echo $item['message']; ?></th>
-                <th scope="col"><?php echo $item['time']; ?></th>
-                </tr>
-                <?php endforeach; ?>
+                <template x-for="item in getData()"> 
+                    <tr>
+                        <th scope="col" x-text="item.id"></th>
+                        <th scope="col" x-text="item.student"></th>
+                        <th scope="col" x-text="item.name"></th>
+                        <th scope="col">
+                            <ul>
+                                <template x-if="item.q1==1"><li>瞭解運動對身體的好處及重要性，願意培養運動習慣。</li></template>
+                                <template x-if="item.q2==1"><li>瞭解含糖飲料對身體的負面影響及多喝白開水的益處。</li></template>
+                                <template x-if="item.q3==1"><li>飲料紅黃綠燈有助於選擇飲品的判斷。</li></template>
+                                <template x-if="item.q4==1"><li>瞭解如何照顧傷口，降低紅腫熱痛感染的發生。</li></template>
+                                <template x-if="item.q5==1"><li>學會執行簡易自我傷口處理。</li></template>
+                                <template x-if="item.q6==1"><li>我願意將今日所學的健康知識傳遞給身邊的朋友與同學。</li></template>
+                                <template x-if="item.q7==1"><li>我會想主動學習更多有關運動、減糖、護眼及傷害預防處理的知識。</li></template>
+                            </ul>
+                        </th>
+                        <th scope="col" x-text="item.score"></th>
+                        <th scope="col" x-text="item.message"></th>
+                        <th scope="col" x-text="item.time"></th>
+                    </tr>
+                </template>
+              
+              
             </tbody>
         </table>
+        <div class="pagination">
+            <button id="prevPage" @click="changePage(-1)" x-show="currpage>1">上一頁</button>
+            <select id="pageNumber" @change="getData()" x-model="currpage">
+                <!-- 頁碼選項將在這裡動態生成 -->
+                <template x-for="n in Math.ceil(totalLength / selectnum)">
+                    <option :value="n" x-text="n"></option>
+                </template>
+                <!-- 更多頁碼選項 -->
+            </select>
+            <button id="nextPage" @click="changePage(1)" x-show="currpage<Math.ceil(totalLength / selectnum)">下一頁</button>
+        </div>
         <table class="table list-table" x-show="list[2].show"  x-ref="table2">
             <tr>
                 <th>瞭解運動對身體的好處及重要性，願意培養運動習慣。</th>
@@ -150,5 +152,7 @@ $feedback = $stmt->fetch(PDO::FETCH_ASSOC);
         var table2excel = new Table2Excel();
         table2excel.export(document.querySelectorAll('table'));
     }
+    const list  = <?php echo json_encode($list); ?>;
+    const total  = list.length;
 </script>
 <?php }else{header('Location:./login.php');  }  ?>
