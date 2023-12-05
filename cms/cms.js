@@ -14,6 +14,8 @@ const score3View = document.getElementById('score3View');
 const score2View = document.getElementById('score2View');
 const score1View = document.getElementById('score1View');
 const scoreModalback = document.getElementsByClassName('scoreModalback');
+const colorArr = ['#aeb200', '#03b200', '#00b2b2', '#0300b2', '#ae00b2'];
+let times = 1;
 addSemple.addEventListener('click', ()=>{
     addSemple.classList.remove('btn-success');
     addSemple.classList.add('btn-secondary');
@@ -30,13 +32,15 @@ lotterySelect.addEventListener('change', ()=>{
 lotteryBtn.addEventListener('click', ()=>{
     if (sampleArr.length == 0) return alert('人數不足，請加入樣本!');
     if (sampleArr.length < lotterySelect.value) return alert('人數不足!');
+    winnerHtml += `<p>第${arabicToChinese(times)}次:</p>`;
     for(let i=1;i<=lotteryNum;i++){
         randomNum =  getRandom(Number(sampleArr.length));
         winner.push(sampleArr[randomNum]);
-        winnerHtml += `<div class="item"><b>${sampleArr[randomNum]}</b></div>`;
+        winnerHtml += `<div class="item"><b style='color:${colorArr[times%5]}'>${sampleArr[randomNum]}</b></div>`;
         sampleArr.splice(randomNum, 1);
     }
     winnerList.innerHTML = winnerHtml;
+    times ++;
 })
 
 function getRandom(x){
@@ -60,4 +64,16 @@ for(let i=0;i<scoreModalback.length;i++){
 }
 function closeScoreModal(e){
     e.target.parentNode.style.display = "none";
+}
+
+function arabicToChinese(number) {
+    var chineseNumbers = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+    var str = number.toString();
+    var chineseStr = '';
+
+    for (var i = 0; i < str.length; i++) {
+        chineseStr += chineseNumbers[parseInt(str[i])];
+    }
+
+    return chineseStr;
 }
