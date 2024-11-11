@@ -1,9 +1,10 @@
 <?php
-$randNum = rand(1,4);
+$randNum = rand(1, 4);
 ?>
 
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
@@ -11,9 +12,10 @@ $randNum = rand(1,4);
     <title>衛保組健促計畫</title>
     <link rel="stylesheet" href="./css/index2.css">
 </head>
+
 <body>
-    <form method="post" action="start.php"> 
-        <img src="images2/home.jpg" alt="">
+    <form method="post" action="start.php">
+        <img src="images2/home.webp" />
         <!-- <a href="./start.php">開始遊戲</a> -->
         <input type="hidden" name="type" value="<?php echo $randNum; ?>">
         <div class="startBtn">
@@ -22,4 +24,5 @@ $randNum = rand(1,4);
         </div>
     </form>
 </body>
+
 </html>
